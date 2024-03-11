@@ -1,26 +1,20 @@
-/*
+// O conceito de sinal e magnitude é uma maneira de representar números, especialmente em sistemas binários, onde cada número é representado por uma sequência de bits. 
 
-As linguagens de programação podem ser classificadas em dois principais paradigmas: puramente interpretadas e compiladas. 
+// Na representação de sinal e magnitude, um bit é reservado para representar o sinal do número (0 para positivo e 1 para negativo), enquanto os outros bits representam a magnitude do número em si. Isso significa que o primeiro bit determina se o número é positivo ou negativo, e os bits restantes representam o valor absoluto do número.
 
-As linguagens puramente interpretadas, como Java e Python, são desenvolvidas com base na convenção entre os humanos. Isso significa que, ao escrever o código, é necessário um software específico para interpretar e executar as instruções. Em outras palavras, o código escrito em linguagens interpretadas não é diretamente traduzido em instruções de máquina, mas sim interpretado por um programa intermediário.
+// Por exemplo, considere um sistema de 4 bits:
 
-Por outro lado, as linguagens compiladas, como B, BCpL, C, C++ e C#, são projetadas com o objetivo de serem transformadas em linguagem de máquina, compreensível pelo hardware do computador. Esse processo é realizado por meio de um compilador, que traduz o código fonte escrito pelo programador em um conjunto de instruções em linguagem de máquina. O resultado desse processo é um arquivo executável que pode ser diretamente executado pelo sistema operacional.
+// - O número 0 é representado como 0000 (positivo)
+// - O número 1 é representado como 0001 (positivo)
+// - O número -1 é representado como 1001 (negativo, onde o primeiro bit indica o sinal e os três bits restantes representam a magnitude, que é 1)
+// - O número 5 é representado como 0101 (positivo)
+// - O número -5 é representado como 1101 (negativo, onde o primeiro bit indica o sinal e os três bits restantes representam a magnitude, que é 5)
 
-Um conceito importante relacionado às linguagens compiladas é o Princípio do Zero Overhead, que significa que "o que você não usa, você não paga". Isso significa que as linguagens compiladas são otimizadas para eliminar qualquer sobrecarga (overhead) desnecessária, garantindo que o código final seja eficiente e execute apenas as operações essenciais para a funcionalidade do programa. Essa abordagem ajuda a garantir um desempenho eficiente e a utilização adequada dos recursos do sistema.
-*/
-#include <cstdio>
+// Uma outra abordagem para representar números negativos é através do complemento de 2, que é uma técnica comumente usada em computação para representar números negativos em binário. O complemento de 2 de um número é obtido invertendo todos os bits do número e adicionando 1 ao resultado.
 
-// Implemente a função isqrt que recebe um número inteiro n e retorna a raiz quadrada inteira de n.
-constexpr int isqrt(int n)
-{ 
-    int i=1;
-    while (i*i<n) ++i;
-    return i-(i*i!=n);
-}
+// Por exemplo:
 
-int main() 
-{
-    // Teste da função isqrt
-    constexpr int x = isqrt(1764);
-    printf("%d", x);
-}
+// - O número 0 em binário é 0000, e seu complemento de 2 é 0000 (pois 0000 invertido é 1111 e adicionando 1 ao resultado temos 0000).
+// - O número 1 em binário é 0001, e seu complemento de 2 é 1111 (pois 0001 invertido é 1110 e adicionando 1 ao resultado temos 1111).
+
+// Essa representação maximiza a quantidade de números inteiros que podem ser representados, permitindo que tanto números positivos quanto negativos sejam representados usando a mesma quantidade de bits. Isso é importante em sistemas computacionais, onde é necessário lidar com uma ampla variedade de valores numéricos de forma eficiente.
