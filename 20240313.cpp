@@ -47,6 +47,10 @@ using std::string;
 //     }
 // }
 
+// Prototipo
+int soma(int, int);
+int soma(int, int, int);
+
 int soma(int iValor1, int iValor2)
 {
     return iValor1 + iValor2;
